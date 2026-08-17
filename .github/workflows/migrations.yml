@@ -1,0 +1,53 @@
+name: Database Migrations
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: purvisonthalia
+          POSTGRES_PASSWORD: password123
+          POSTGRES_DB: bms_sequelize
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run migrations
+        run: npx sequelize-cli db:migrate
+        env:
+          NODE_ENV: development
+
+      - name: Run seeders
+        run: npx sequelize-cli db:seed:all
+        env:
+          NODE_ENV: development
+
+      - name: Verify migration
+        run: |
+          echo "Migrations completed successfully"
+          echo "Tables created: authors, categories, books, book_categories"

@@ -33,9 +33,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@purvi-sf"
 
       - name: Install dependencies
         run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run migrations
         run: npx sequelize-cli db:migrate

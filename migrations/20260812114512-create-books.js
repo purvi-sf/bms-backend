@@ -54,10 +54,30 @@ module.exports = {
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
     });
+
+    // Index on author_id for faster JOINs
+    await queryInterface.addIndex('books', ['author_id'], {
+      name: 'idx_books_author_id',
+    });
+
+    // CHECK constraint: page_count must be positive if provided
+    await queryInterface.addConstraint('books', {
+      fields: ['page_count'],
+      type: 'check',
+      name: 'books_page_count_check',
+      where: {
+        page_count: { [Sequelize.Op.gt]: 0 },
+      },
+    });
   },
 
   async down(queryInterface) {
+    // Remove constraints and indexes before dropping table
+    await queryInterface.removeConstraint('books', 'books_page_count_check');
+    await queryInterface.removeIndex('books', 'idx_books_author_id');
     await queryInterface.dropTable('books');
-    await queryInterface.sequelize.query('DROP TYPE IF EXISTS "enum_books_book_type";');
+    await queryInterface.sequelize.query(
+      'DROP TYPE IF EXISTS "enum_books_book_type";'
+    );
   },
 };

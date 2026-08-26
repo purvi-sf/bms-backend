@@ -52,6 +52,13 @@ jobs:
           NODE_ENV: development
 
       - name: Verify migration
+        run: npx sequelize-cli db:migrate:status
+        env:
+          NODE_ENV: development
+
+      - name: Verify rollback
         run: |
-          echo "Migrations completed successfully"
-          echo "Tables created: authors, categories, books, book_categories"
+          npx sequelize-cli db:migrate:undo:all
+          npx sequelize-cli db:migrate
+        env:
+          NODE_ENV: development

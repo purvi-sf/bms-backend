@@ -1,0 +1,17 @@
+{
+  "name": "bms-microservices",
+  "version": "1.0.0",
+  "description": "BMS Microservices Monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "start": "lerna run start --parallel",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "lerna": "^10.0.1"
+  }
+}

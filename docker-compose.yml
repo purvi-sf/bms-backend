@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: bms_postgres
+    environment:
+      POSTGRES_USER: purvisonthalia
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: bms_sequelize
+    ports:
+      - "5432:5432"
+    volumes:
+      - bms_postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  bms_postgres_data:

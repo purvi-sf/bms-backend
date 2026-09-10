@@ -1,8 +1,0 @@
-{"level":"info","message":"Books service started","port":"3001","service":"books-service","timestamp":"2026-09-10T06:00:48.552Z"}
-{"ip":"::1","level":"info","message":"Request received","method":"GET","requestId":"892109d0-e08f-419c-b261-a503a1199d25","service":"books-service","timestamp":"2026-09-10T06:00:53.449Z","url":"/health","userAgent":"axios/1.18.1"}
-{"duration":"3ms","level":"info","message":"Request completed","method":"GET","requestId":"892109d0-e08f-419c-b261-a503a1199d25","service":"books-service","statusCode":200,"timestamp":"2026-09-10T06:00:53.452Z","url":"/health"}
-{"ip":"::1","level":"info","message":"Request received","method":"GET","requestId":"fc500e4a-8933-40da-a12f-8c976cb370bd","service":"books-service","timestamp":"2026-09-10T06:00:53.476Z","url":"/metrics","userAgent":"curl/8.7.1"}
-{"duration":"2ms","level":"info","message":"Request completed","method":"GET","requestId":"fc500e4a-8933-40da-a12f-8c976cb370bd","service":"books-service","statusCode":200,"timestamp":"2026-09-10T06:00:53.477Z","url":"/metrics"}
-{"ip":"::1","level":"info","message":"Request received","method":"POST","requestId":"b64ce4b9-bb9f-4b07-8b4c-ead51ecc9ef4","service":"books-service","timestamp":"2026-09-10T06:00:53.495Z","url":"/books","userAgent":"axios/1.18.1"}
-{"bookId":"3","level":"info","message":"Book created","requestId":"b64ce4b9-bb9f-4b07-8b4c-ead51ecc9ef4","service":"books-service","timestamp":"2026-09-10T06:00:53.496Z","title":"1984"}
-{"duration":"1ms","level":"info","message":"Request completed","method":"POST","requestId":"b64ce4b9-bb9f-4b07-8b4c-ead51ecc9ef4","service":"books-service","statusCode":201,"timestamp":"2026-09-10T06:00:53.496Z","url":"/books"}

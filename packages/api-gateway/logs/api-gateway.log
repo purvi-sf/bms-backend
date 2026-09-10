@@ -1,9 +1,0 @@
-{"level":"info","message":"API Gateway started","port":"3000","service":"api-gateway","services":{"authors":"http://localhost:3002","books":"http://localhost:3001","categories":"http://localhost:3003"},"timestamp":"2026-09-10T06:00:51.501Z"}
-{"level":"info","message":"Facade Pattern active -- all traffic routed through gateway","service":"api-gateway","timestamp":"2026-09-10T06:00:51.503Z"}
-{"ip":"::1","level":"info","message":"Request received","method":"GET","requestId":"3cb4976b-2a51-4f6e-8f64-d904055fe026","service":"api-gateway","timestamp":"2026-09-10T06:00:53.431Z","url":"/health","userAgent":"curl/8.7.1"}
-{"allHealthy":true,"level":"info","message":"Health check performed","service":"api-gateway","timestamp":"2026-09-10T06:00:53.465Z"}
-{"duration":"36ms","level":"info","message":"Request completed","method":"GET","requestId":"3cb4976b-2a51-4f6e-8f64-d904055fe026","service":"api-gateway","statusCode":200,"timestamp":"2026-09-10T06:00:53.466Z","url":"/health"}
-{"ip":"::1","level":"info","message":"Request received","method":"POST","requestId":"d8cedf8a-1f1c-4eac-a266-abe10a1e9877","service":"api-gateway","timestamp":"2026-09-10T06:00:53.491Z","url":"/api/books","userAgent":"curl/8.7.1"}
-{"from":"/api/books","level":"info","message":"Proxying to books-service","method":"POST","requestId":"b64ce4b9-bb9f-4b07-8b4c-ead51ecc9ef4","service":"api-gateway","timestamp":"2026-09-10T06:00:53.491Z","to":"http://localhost:3001/books"}
-{"level":"info","message":"Response from books-service","requestId":"b64ce4b9-bb9f-4b07-8b4c-ead51ecc9ef4","service":"api-gateway","statusCode":201,"timestamp":"2026-09-10T06:00:53.496Z"}
-{"duration":"5ms","level":"info","message":"Request completed","method":"POST","requestId":"d8cedf8a-1f1c-4eac-a266-abe10a1e9877","service":"api-gateway","statusCode":201,"timestamp":"2026-09-10T06:00:53.496Z","url":"/api/books"}

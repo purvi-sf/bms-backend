@@ -1,0 +1,3 @@
+{"level":"info","message":"Authors service started","port":"3002","service":"authors-service","timestamp":"2026-09-10T06:00:49.479Z"}
+{"ip":"::1","level":"info","message":"Request received","method":"GET","requestId":"6355d0c6-00cc-409a-849d-69c6ee9bbff9","service":"authors-service","timestamp":"2026-09-10T06:00:53.457Z","url":"/health","userAgent":"axios/1.18.1"}
+{"duration":"3ms","level":"info","message":"Request completed","method":"GET","requestId":"6355d0c6-00cc-409a-849d-69c6ee9bbff9","service":"authors-service","statusCode":200,"timestamp":"2026-09-10T06:00:53.460Z","url":"/health"}
